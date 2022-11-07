@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import Events from './Events';
 import Projects from './Projects';
+import Registration from './Registration';
 import Volunteers from './Volunteers';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Events></Events>
             <Projects></Projects>
             <Volunteers></Volunteers>
+            <Registration></Registration>
         </div>
     );
 };

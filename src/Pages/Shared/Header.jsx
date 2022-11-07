@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaUserSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
@@ -29,6 +29,9 @@ const Header = () => {
               <Link to="/events">Events</Link>
             </li>
             <li>
+              <Link to="/interests">Interests</Link>
+            </li>
+            <li>
               <Link to="/profile">Profile</Link>
             </li>
             <li>
@@ -43,10 +46,12 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-end">
-        <div className="avatar online mr-2">
-          <div className="w-12 rounded-full">
-            <img src={ user?.photoURL} alt="" />
-          </div>
+        <div className="avatar mr-2">
+          {
+            user?.photoURL ? <div className="w-12 rounded-full">
+            <img src={user?.photoURL} alt="" />
+          </div> : <FaUserSlash className="w-24"></FaUserSlash>
+          }
         </div>
         {user?.email ? (
           <button onClick={handleSignOut} className="btn btn-outline w-28 btn-sm ml-2 text-white ">
